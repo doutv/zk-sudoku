@@ -15,7 +15,7 @@ export async function sudokuCalldata(unsolved, solved) {
       "/zkproof/sudoku/sudoku_0001.zkey"
     );
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     window.alert("Wrong answer");
   }
 

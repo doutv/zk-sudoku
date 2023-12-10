@@ -52,7 +52,7 @@ export default function Sudoku() {
   const [loadingVerifyAndMintBtn, setLoadingVerifyAndMintBtn] = useState(false);
   const [loadingStartGameBtn, setLoadingStartGameBtn] = useState(false);
 
-  const {data: signer} = useSigner();
+  const { data: signer } = useSigner();
 
   const provider = useProvider();
 
@@ -313,16 +313,14 @@ export default function Sudoku() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
-      <div className="flex">
-        <div className="mx-5 mb-10 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">
-          Sudoku
-        </div>
-      </div>
+    <div className="bg-slate-900">
+      <h1 className="text-center p-10 mb-5 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">
+        zk-Sudoku
+      </h1>
       <div className="flex flex-wrap gap-20 justify-center items-center text-slate-300">
         {renderSudoku()}
       </div>
-      <div className="flex place-content-center mt-20 text-lg text-slate-300">
+      <div className="pd-20 flex place-content-center mt-20 text-lg text-slate-300">
         <div className="md:w-6/12">
           <div className="text-center my-5 font-semibold">Sudoku rules:</div>
           <div className="space-y-5">
