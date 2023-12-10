@@ -29,16 +29,12 @@ module.exports = {
     },
   },
   networks: {
-    mumbai: {
-      url: "https://rpc-mumbai.maticvigil.com/",
+    moonbase: {
+      url: "https://moonbase-alpha.public.blastapi.io",
       accounts: [process.env.PRIVATE_KEY],
     },
-    harmonyTestnet: {
-      url: "https://api.s0.b.hmny.io",
-      accounts: [process.env.PRIVATE_KEY],
-    },
-    harmonyMainnet: {
-      url: "https://api.harmony.one",
+    moonbeam: {
+      url: "https://1rpc.io/glmr",
       accounts: [process.env.PRIVATE_KEY],
     },
   },

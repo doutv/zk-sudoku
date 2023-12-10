@@ -20,7 +20,7 @@ When you run tests you will see something like this:
 
 ![tests](https://user-images.githubusercontent.com/52170174/166123994-9c68c215-f538-4216-bd50-18d29d4fe4ba.png)
 
-## Deploy on [Harmony Testnet](https://explorer.pops.one/)
+## Deploy on [Moonbeam Testnet Moonbase Alpha](https://moonbase.moonscan.io/)
 
 Create a `.env` file and add to it:
 
@@ -30,13 +30,13 @@ PRIVATE_KEY=<yourPrivateKey>
 
 where `yourPrivateKey` is the private key of your wallet.
 
-To deploy on Harmony Testnet run:
+To deploy on Moonbase Alpha run:
 
 ```bash
-npx hardhat run scripts/deploy.js --network harmonyTestnet
+npx hardhat run scripts/deploy.js --network moonbase
 ```
 
-## Deploy on [Harmony Mainnet](https://explorer.harmony.one/)
+## Deploy on [Moonbeam](https://moonbeam.moonscan.io/)
 
 Create a `.env` file and add to it:
 
@@ -46,10 +46,10 @@ PRIVATE_KEY=<yourPrivateKey>
 
 where `yourPrivateKey` is the private key of your wallet.
 
-To deploy on Harmony Mainnet run:
+To deploy on Moonbeam run:
 
 ```bash
-npx hardhat run scripts/deploy.js --network harmonyMainnet
+npx hardhat run scripts/deploy.js --network moonbeam
 ```
 
 ## Futoshiki contracts graph
