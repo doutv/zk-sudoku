@@ -10,6 +10,27 @@ The frontend is a [Next.js](https://nextjs.org/) project bootstrapped with [`cre
 yarn install
 ```
 
+## Env Config
+Add chain info in `utils/networks.json`
+For example, add Moonbase Alpha and set it as the default chain:
+```json
+{
+    "selectedChain": "1287",
+    "1287": {
+        "chainId": "1337",
+        "chainName": "Moonbase Alpha",
+        "rpcUrls": ["https://moonbase-alpha.public.blastapi.io"],
+        "nativeCurrency": {
+            "symbol": "DEV"
+        },
+        "blockExplorerUrls": ["https://moonbase.moonscan.io/"]
+    },
+}
+```
+
+Modify contract addresses in `utils/contractaddress.json`
+
+
 ## Run the development server
 
 ```bash
