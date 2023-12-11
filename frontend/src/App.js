@@ -150,6 +150,7 @@ export default function Sudoku() {
         }address/${contractAddress.sudokuContract}`
       );
     } catch (error) {
+      console.error(error);
       setLoadingVerifyAndMintBtn(false);
       alert("Wrong solution");
     }
@@ -174,7 +175,8 @@ export default function Sudoku() {
   };
 
   const renderVerifySudokuAndMintNft = () => {
-    if (address) {
+    const selectChainId = parseInt(networks.selectedChain);
+    if (!address) {
       return (
         <button
           className="text-lg font-medium rounded-md px-5 py-3 w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500"
@@ -183,11 +185,11 @@ export default function Sudoku() {
           Connect Wallet to Verify Sudoku & Mint NFT
         </button>
       );
-    } else if (address && chain !== networks.selectedChain) {
+    } else if (address && chain.id !== selectChainId) {
       return (
         <button
           className="text-lg font-medium rounded-md px-5 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500"
-          onClick={() => switchNetwork(networks.selectedChain)}
+          onClick={() => switchNetwork(selectChainId)}
         >
           Switch Network to Verify Sudoku & Mint NFT
         </button>
