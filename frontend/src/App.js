@@ -315,7 +315,7 @@ export default function Sudoku() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 p-10">
       <h1 className="text-center p-10 mb-5 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">
         zk-Sudoku
       </h1>
