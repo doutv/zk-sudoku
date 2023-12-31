@@ -1,6 +1,7 @@
 /* global BigInt */
 
 import { groth16 } from "snarkjs";
+import { wasmBase64 } from "./sudoku/wasm";
 
 function unstringifyBigInts(o) {
   if (typeof o == "string" && /^[0-9]+$/.test(o)) {
@@ -22,10 +23,31 @@ function unstringifyBigInts(o) {
   }
 }
 
+// function decodeBase64File(uint8Array) {
+//   const base64 = String.fromCharCode.apply(null, uint8Array);
+//   const str = window.atob(base64);
+//   const encoder = new TextEncoder();
+//   const res = encoder.encode(str);
+//   return res;
+// }
+
 export async function exportCallDataGroth16(input, wasmPath, zkeyPath) {
+  const wasmBytes = Uint8Array.from(atob(wasmBase64), c => c.charCodeAt(0));
+  // let wasmFile = await fetch(wasmPath).then(function (res) {
+  //   return res.arrayBuffer();
+  // }).then(function (ab) {
+  //   return new Uint8Array(ab);
+  // });
+  // try {
+  //   wasmFile = decodeBase64File(wasmFile);
+  // } catch (e) {
+  //   console.log("wasm not in base64");
+  // }
+  // console.log(wasmFile.byteLength);
+
   const { proof, publicSignals } = await groth16.fullProve(
     input,
-    wasmPath,
+    wasmBytes,
     zkeyPath
   );
 
